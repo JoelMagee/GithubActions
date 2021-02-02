@@ -17,7 +17,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prettier:check": "./node_modules/.bin/prettier --check .",
-    "prettier:write": "./node_modules/.bin/prettier --write ."
+    "prettier:write": "./node_modules/.bin/prettier --write .",
+    "stylelint:check": "./node_modules/.bin/stylelint **/*.css",
+    "stylelint:write": "./node_modules/.bin/stylelint **/*.css --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -38,6 +40,8 @@
     ]
   },
   "devDependencies": {
-    "prettier": "2.2.1"
+    "prettier": "2.2.1",
+    "stylelint": "^13.9.0",
+    "stylelint-config-standard": "^20.0.0"
   }
 }
