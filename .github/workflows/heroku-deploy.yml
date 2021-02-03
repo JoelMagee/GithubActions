@@ -1,6 +1,8 @@
 name: Deploy app to heroku
 
-on: [push]
+# When
+on:
+  push: [master]
 
 jobs:
   build:
