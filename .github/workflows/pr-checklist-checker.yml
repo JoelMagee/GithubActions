@@ -16,4 +16,5 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+      - run: npm ci
       - uses: ./.github/actions/pr-checklist-checker
