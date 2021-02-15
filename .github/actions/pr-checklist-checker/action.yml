@@ -1,0 +1,5 @@
+name: "PR Checklist Checker"
+description: "Checks for the presence of a checklist on a PR and fails if not all items are checked"
+runs:
+  using: "node12"
+  main: "./index.js"
