@@ -26,5 +26,5 @@ jobs:
           path: ~/.npm
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
 
-      - run: npm install @actions/core @actions/github
+      - run: npm install --prefer-offline @actions/core @actions/github
       - uses: ./.github/actions/pr-checklist-checker
