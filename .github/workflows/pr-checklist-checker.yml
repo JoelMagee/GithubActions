@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DEPENDENCIES: "@actions/core@1.2.6 @actions/github@4.0.0"
+      BUMP_VERSION: 1
 
     steps:
       - uses: actions/checkout@v1
@@ -27,7 +28,7 @@ jobs:
         with:
           # npm cache files are stored in `~/.npm` on Linux/macOS
           path: ./node_modules
-          key: ${{env.DEPENDENCIES}}
+          key: ${{env.DEPENDENCIES}}}_${{env.BUMP_VERSION}}
 
       - name: Optionally install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
