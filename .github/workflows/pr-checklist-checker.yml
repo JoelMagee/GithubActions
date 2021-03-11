@@ -14,6 +14,8 @@ jobs:
     name: PR checklist checker
     # Set the type of machine to run on
     runs-on: ubuntu-latest
+    env:
+      DEPENDENCIES: "@actions/core@1.2.6 @actions/github@4.0.0"
 
     steps:
       - uses: actions/checkout@v1
@@ -25,11 +27,11 @@ jobs:
         with:
           # npm cache files are stored in `~/.npm` on Linux/macOS
           path: ./node_modules
-          key: ${{ runner.os }}-modules-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{env.DEPENDENCIES}}
 
       - name: Optionally install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
-        run: npm install @actions/core @actions/github
+        run: npm install ${{env.DEPENDENCIES}}
 
       - name: Run PR Checklist Checker action
         uses: ./.github/actions/pr-checklist-checker
